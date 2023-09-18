@@ -13,3 +13,4 @@ esPrimo :: Int -> Bool
 esPrimo n | (n == (divisor (n) (2))) = True
           | otherwise = False
 
+rt

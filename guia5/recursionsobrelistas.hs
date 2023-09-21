@@ -28,7 +28,7 @@ testmaximo2 = (maximo [3]) == 3 :: Bool
 ordenar :: [Int] -> [Int]
 ordenar []=[]
 ordenar [x]=[x]
-ordenar (x:xs) = agregarAtras maximo(x:xs)
+-- ordenar (x:xs) = agregarAtras maximo(x:xs)
 
 agregarAtras :: Int -> [Int] -> [Int]
 agregarAtras x [] = [x]

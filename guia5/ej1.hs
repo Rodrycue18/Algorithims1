@@ -56,9 +56,50 @@ auxiliarHayRepe x xs = pertenece x xs
 -- Ejercicio 9 
 quitar :: (Eq t) => t -> [t] -> [t]
 quitar _ [] = []
-quitar n (x:xs) | elem n (x:xs) =  -- si n pertenece a la lista entonces eliminamos coso , tenemos que cocatenar
+quitar n (x:xs) | n == x = xs
+                | otherwise = x : quitar n xs
 
+quitarTodos :: (Eq t) => t -> [t] -> [t]
+quitarTodos _ [] = []
+quitarTodos n (x:xs) | n == x = quitarTodos n xs
+                     | otherwise = x : quitarTodos n xs
 
+eliminarRepetidos :: (Eq t) => [t] -> [t]
+eliminarRepetidos [] = []
+eliminarRepetidos (x:xs) | elem x xs = x : (eliminarRepetidos(quitarTodos x xs))
+                         | otherwise = x : eliminarRepetidos xs
+
+-- mismosElementos :: (Eq t) => [t] -> [t] -> Bool
+-- mismosElementos [] (y:ys) = True
+-- mismosElementos (x:xs) (y:ys) | (auxMismosElementos x (y:ys) ) && (mismosElementos (xs) (y:ys)) = True
+--                               | otherwise = False
+
+-- auxMismosElementos :: (Eq t) => t -> [t] -> Bool
+-- auxMismosElementos x (y:ys) = elem x (y:ys)
+
+estaContenida :: (Eq t) => [t] -> [t] -> Bool
+estaContenida [] ys = True
+estaContenida (x:xs) ys = pertenece x ys && estaContenida xs ys
+
+mismosElementos1 :: (Eq t) => [t] -> [t] -> Bool
+mismosElementos1 xs ys = estaContenida xs ys && estaContenida ys xs
+
+capicua :: (Eq t) => [t] -> Bool
+capicua [] = False
+capicua [x] = True
+capicua list = list == reverse (list)
+
+------------------------------    
+--Pares de una lista
+evens :: [Int] -> [Int]
+evens [] = []
+evens (x:xs) | mod x 2 == 0 = x : evens xs
+             | otherwise = evens xs
+--Elimina repetidos de una lista , solo deja uno
+nub :: (Eq t) => [t] -> [t]
+nub [] = []
+nub (x:xs) | elem x xs = nub xs
+           | otherwise = x : nub xs
 
 agregarAtras :: Int -> [Int] -> [Int]
 agregarAtras x [] = [x]

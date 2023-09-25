@@ -35,16 +35,16 @@ multiplosdeN _ [] = []
 multiplosdeN n (x:xs) | mod x n == 0 = x : multiplosdeN n xs
                       | otherwise = multiplosdeN n xs
 
-ordenar :: [Int] -> [Int]
-ordenar [] = []
-ordenar [x] = [x]
-ordenar (x:xs) | x < ordenar xs = [x] ++ ordenar xs
-               | otherwise = ordenar xs
+-- ordenar :: [Int] -> [Int]
+-- ordenar [] = []
+-- ordenar [x] = [x]
+-- ordenar (x:xs) | x < ordenar xs = [x] ++ ordenar xs
+--                | otherwise = ordenar xs
 
---Vemos quienes son menores
-compararCadaElemento :: Int -> [Int] -> Int
-compararCadaElemento _ [] = []
-compararCadaElemento x (y:ys) |  x < compararCadaElemento y (ys) = x
-                          | otherwise = compararCadaElemento ()
+-- --Vemos quienes son menores
+-- compararCadaElemento :: Int -> [Int] -> Int
+-- compararCadaElemento _ [] = []
+-- compararCadaElemento x (y:ys) |  x < compararCadaElemento y (ys) = x
+--                           | otherwise = compararCadaElemento ()
 
--- no edsta terminado , pensar mejor la solucion
+-- -- no edsta terminado , pensar mejor la solucion

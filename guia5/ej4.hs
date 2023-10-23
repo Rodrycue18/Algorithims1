@@ -22,14 +22,6 @@ palabras :: [Char] -> [[Char]]
 palabras [] = [[]]
 palabras (x:[]) = [[x]]
 
-
-
-
-
-
-
-
-
 contarPalabras1 :: [Char] -> Int
 contarPalabras1 [] = 0
 contarPalabras1 (xs) = (contarEspacios (quitarEspaciosIniFin (sacarBlancosRepetidos xs))) + 1

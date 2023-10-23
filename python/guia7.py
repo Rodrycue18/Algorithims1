@@ -51,7 +51,7 @@ def ordenados (lista:list)->bool:
         
     return True
 
-#print(ordenados([2,10,8]))
+#print(ordenados([2,8,10]))
 
 def palabraGrande (lista:list):
     for i in range(len(lista)):
@@ -132,7 +132,7 @@ def borrarPares (lista:list) ->list:
 
 lista1 = [1,2,3,4,5,6] #valor original de la variable global
 borrarPares(lista1)
-print(lista1)# valor actual despues de haber aplicado la funcion borrarPares
+#print(lista1)# valor actual despues de haber aplicado la funcion borrarPares
 
 def borrarVocales(cadena):
     a = ""
@@ -155,4 +155,19 @@ def perteneceACadaUno(lista, numero):
     return a
 
 #print(perteneceACadaUno([[1,2,3],[2,1]], 3))
+
+#Ejercicio 9
+#ejem bubleSort
+#ESTA MAL EL EJERCICIO xd
+vocal = list("aeiou")
+def vocalesRepitidas (palabra):
+    a=[]
+    for i in palabra:
+        for j in vocal:
+            if i==j:
+                a.append(i)
+    if a.count('a') >= 2 or a.count('e') >= 2 or a.count('i') >= 2 or a.count('o') >= 2 or a.count('u') >= 2:
+        return False
+    return True
+#print(vocalesRepitidas("holatyytytei"))
 
